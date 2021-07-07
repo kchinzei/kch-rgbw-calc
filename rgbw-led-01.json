@@ -1,0 +1,34 @@
+{
+  "LEDChip": [
+    {
+      "type": "LED_R",
+      "waveLength": 670,
+      "maxLuminance": 30.6,
+      "maxW": 1.0,
+      "name": "Typical R"
+    },
+    {
+      "type": "LED_R",
+      "waveLength": 690,
+      "maxLuminance": 30.6,
+      "maxW": 1.0,
+      "name": "Typical R2"
+    },
+    {
+      "type": "LED_G",
+      "x": 0.2002,
+      "y": 0.6976,
+      "maxLuminance": 67.2,
+      "maxW": 1,
+      "name": "Typical G"
+    },
+    {
+      "type": "LED_B",
+      "x": 0.1417,
+      "y": 0.0618,
+      "maxLuminance": 8.2,
+      "maxW": 1,
+      "name": "Typical B"
+    }
+  ]
+}

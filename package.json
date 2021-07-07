@@ -1,0 +1,54 @@
+{
+  "name": "kch-rgbw-calc",
+  "version": "1.0.0",
+  "description": "Composite LED color calculator",
+  "bin": {
+    "calc": "bin/calc.js",
+    "getcolor": "bin/getcolor.js",
+    "getpwm": "bin/getpwm.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "fix": "run-p fix:*",
+    "fix:eslint": "npm run lint:eslint -- --fix",
+    "fix:prettier": "npm run lint:prettier -- --write",
+    "lint": "run-p lint:*",
+    "lint:eslint": "eslint --ext js,ts .",
+    "lint:prettier": "prettier -l \"**/*.{json,md,yml}\"",
+    "lint:type": "tsc --noEmit"
+  },
+  "keywords": [
+    "LED",
+    "Many-color LED"
+  ],
+  "author": "Kiyo Chinzei",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Kiyo Chinzei",
+      "email": "kchinzei@gmail.com"
+    }
+  ],
+  "bundleDependencies": false,
+  "dependencies": {
+    "kch-rgbw-lib": "^2.0.0",
+    "commander": "^7.2.0"
+  },
+  "deprecated": false,
+  "devDependencies": {
+    "@types/node": "^15.12.0",
+    "typescript": "^4.3.0",
+    "eslint": "^7.27.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.3.0"
+  },
+  "engines": {
+    "node": ">= 14.0.0"
+  },
+  "homepage": "https://github.com/kchinzei/kch-rgbw-calc",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kchinzei/kch-rgbw-calc.git"
+  },
+  "types": "./declarations/index.d.ts"
+}
