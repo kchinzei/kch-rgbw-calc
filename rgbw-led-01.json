@@ -8,13 +8,6 @@
       "name": "Typical R"
     },
     {
-      "type": "LED_R",
-      "waveLength": 690,
-      "maxLuminance": 30.6,
-      "maxW": 1.0,
-      "name": "Typical R2"
-    },
-    {
       "type": "LED_G",
       "x": 0.2002,
       "y": 0.6976,
@@ -29,6 +22,20 @@
       "maxLuminance": 8.2,
       "maxW": 1,
       "name": "Typical B"
+    },
+    {
+      "type": "LED_W",
+      "colorTemperature": 6500,
+      "maxLuminance": 40,
+      "maxW": 1,
+      "name": "Typical CoolWhite"
+    },
+    {
+      "type": "LED_W",
+      "colorTemperature": 3300,
+      "maxLuminance": 40,
+      "maxW": 1,
+      "name": "Typical WarmWhite"
     }
   ]
 }

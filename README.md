@@ -95,10 +95,12 @@ If you want to get this in RGB,
 Output composite color: {"_type":"rgb","_a":[0.9999999999999999,0.9999999999999999,0.9999999999999999]}
 ```
 
-Saturated? Yes. It's because these programs (and `kch-rgbw-lib`) use `'xyY'` color space as their basic color representation. `'xyY'` treats `Y` component as luminance, which is absolute value, while `'rgb'` and `'hsv'` spaces based on brightness, which is relative to max luminance.
+Unfortunately, it's **inaccurate and saturated**.
+This happens because these programs (and `kch-rgbw-lib`) use `'xyY'` color space as their basic color representation.
+`'xyY'` treats `Y` component as luminance, which is absolute value, while `'rgb'` and `'hsv'` spaces based on brightness, which is relative to max luminance.
 
-The problem is that 'max luminance' is not uniform across the gamut of different LEDs.
-In very short, max luminance varies by color to represent.
+The problem is that 'max luminance' is not uniform across the gamut of different LEDs,
+because we cannot assume that LEDs always have balanced max luminance.
 It is problematic in case of composite LEDs. To avoid this issue, I recommend you to use `'xyY'` instead of `'rgb'`.
 
 But you probably still need to convert between RGB. Try smaller PWM values. Since max luminance was 106 for PWM=1.0, we try 0.001.
@@ -109,6 +111,22 @@ Output composite color: {"_type":"rgb","_a":[0.3799334439841642,0.35259216065113
 ```
 
 Yes, it's white slightly shifted to red.
+
+### 4. Solve PWM values for R-G-B-CW-WW LEDs
+
+Sample JSON file has 5 LEDs: red, green, blue, cool white (6500 K) and warm white (3300 K). To obtain natural white (usually around 4000 K, which is 0.3827, 0.3820):
+
+```Shell
+> getpwm -f rgbw-led-01.json 0.3827,0.3820,40 
+Output PWM values: 0.19421024010055238,0.19796334330569254,0,0.5188507495694974,0
+```
+
+We use 40 as luminance here. If we increase it to 80:
+
+```Shell
+> getpwm -f rgbw-led-01.json 0.3827,0.3820,80
+Output PWM values: 0.3989828893365667,0.41183560358941984,0.014118417694150506,1,0
+```
 
 # License
 

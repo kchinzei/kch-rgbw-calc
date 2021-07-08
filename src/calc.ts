@@ -125,9 +125,12 @@ async function main(): Promise<void> {
     for (const arg of program.args) {
       const b = commaSeparatedList(arg);
       for (const s of b) {
-        a[i++] = parseFloat(s);
-        if (i === 3)
-          break;
+        const n = parseFloat(s);
+        if (!Number.isNaN(n)) {
+          a[i++] = n;
+          if (i === 3)
+            break;
+        }
       }
     }
 

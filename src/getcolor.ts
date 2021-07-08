@@ -87,7 +87,10 @@ async function main(): Promise<void> {
   for (const arg of program.args) {
     const b = commaSeparatedList(arg);
     for (const s of b) {
-      a.push(parseFloat(s));
+      const n = parseFloat(s);
+      if (!Number.isNaN(n)) {
+        a.push(n);
+      }
     }
   }
 
