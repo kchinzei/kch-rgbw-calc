@@ -117,7 +117,7 @@ Yes, it's white slightly shifted to red.
 Sample JSON file has 5 LEDs: red, green, blue, cool white (6500 K) and warm white (3300 K). To obtain natural white (usually around 4000 K, which is 0.3827, 0.3820):
 
 ```Shell
-> getpwm -f rgbw-led-01.json 0.3827,0.3820,40 
+> getpwm -f rgbw-led-01.json 0.3827,0.3820,40
 Output PWM values: 0.19421024010055238,0.19796334330569254,0,0.5188507495694974,0
 ```
 
