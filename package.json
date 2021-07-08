@@ -1,6 +1,6 @@
 {
   "name": "kch-rgbw-calc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Composite LED color calculator",
   "bin": {
     "calc": "bin/calc.js",
